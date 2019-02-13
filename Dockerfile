@@ -4,8 +4,12 @@ EXPOSE 5000
 
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
-COPY . .
+
+RUN mkdir HelloWorldWebApi
+COPY HelloWorldWebApi/HelloWorldWebApi.csproj HelloWorldWebApi/
+COPY HelloWorldWebApi.sln ./
 RUN dotnet restore HelloWorldWebApi/HelloWorldWebApi.csproj
+
 COPY . .
 WORKDIR /src/HelloWorldWebApi
 RUN dotnet build HelloWorldWebApi.csproj -c Release -o /app
