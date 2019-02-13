@@ -1,6 +1,14 @@
-# Build
-`dotnet build`
+# Hello World Web API reference app
 
-# Run
-`dotnet run --project ./HelloWorldWebApi/HelloWorldWebApi.csproj`
+## Setup
 
+```bash
+make build
+```
+
+## Run
+
+```bash
+make serve
+curl http://localhost:5000/api/values
+```
